@@ -1,6 +1,6 @@
 <?php
 
-(new DotEnv('../../.env'))->load();
+(new DotEnv('./.env'))->load();
 
 class HomeController extends Controller {
     
