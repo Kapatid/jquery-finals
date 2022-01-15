@@ -8,7 +8,13 @@ class HomeController extends Controller {
         $url = getenv('API_URL');
         $json = file_get_contents($url);
         $obj = json_decode($json, true);
+
+        for ($i = 0; $i < count($obj); $i++) {
+            $bdId = $obj[$i]['id'];
         
-        $_SESSION['bachelorsDegrees'] = $obj;
+            echo <<< HTML
+                <div>$bdId</div>
+            HTML;
+        }
     }
 }
