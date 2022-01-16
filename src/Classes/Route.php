@@ -1,6 +1,6 @@
 <?php
 
-class Route {
+abstract class Route {
 
     public static $validRoutes = array();
 

@@ -1,19 +1,15 @@
 <?php
 
-(new DotEnv('./.env'))->load();
-
-class HomeController extends Controller {
+abstract class HomeController extends Controller {
     
     public static function index() {
-        $url = getenv('API_URL');
-        $json = file_get_contents($url);
-        $obj = json_decode($json, true);
+        $bachelorsDegree = new BachelorsDegree();
 
-        for ($i = 0; $i < count($obj); $i++) {
-            $bdId = $obj[$i]['id'];
-        
+        foreach ($bachelorsDegree->getBachelorsDegrees() as $bd) {
+            $obj = $bd['id'];
+            
             echo <<< HTML
-                <div>$bdId</div>
+                <div>$obj</div>
             HTML;
         }
     }

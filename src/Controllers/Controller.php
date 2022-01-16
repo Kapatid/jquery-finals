@@ -1,6 +1,6 @@
 <?php
 
-class Controller{
+abstract class Controller{
 
     /**
      * Inserts a page to view
