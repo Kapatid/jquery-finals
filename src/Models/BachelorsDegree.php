@@ -1,15 +1,13 @@
 <?php
 
-class BachelorsDegree extends Database {
-
+class BachelorsDegree extends Database 
+{
     private $db;
 
-    function __construct()
-    {
-        $this->db = new Database();
-    }
+    function __construct() { $this->db = new Database(); }
 
-    public function getBachelorsDegrees() {
+    public function getBachelorsDegrees() 
+    {
         return $this->db->getAll(TableName::BachelorsDegrees);
     }
 }

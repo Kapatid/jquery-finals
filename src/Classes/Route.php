@@ -1,6 +1,7 @@
 <?php
 
-abstract class Route {
+abstract class Route 
+{
 
     public static $validRoutes = array();
 
@@ -8,7 +9,8 @@ abstract class Route {
      * Takes in a route name and if
      * it is available run the given function
      */
-    public static function set(string $route, object $function) {
+    public static function set(string $route, object $function) 
+    {
         self::$validRoutes[] = $route;
 
         // print_r(self::$validRoutes); 
@@ -20,5 +22,15 @@ abstract class Route {
         elseif (!in_array($_SERVER['REQUEST_URI'], self::$validRoutes)) {
             $_SESSION['error'] = 'page error';
         }
+    }
+
+    public static function requireController(string $name) 
+    {
+        require_once('./src/Controllers/'.$name.'.php');
+    }
+
+    public static function requireLayout(string $name) 
+    {
+        require_once('./src/layouts/'.$name.'.php');
     }
 }

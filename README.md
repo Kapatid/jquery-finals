@@ -5,4 +5,4 @@ and Technology.
 
 ### Build
 
-This website is built from scratch that follows the MVC model.
+This website is built from scratch that follows the MVC model. Data comes from [MockAPI](https://mockapi.io).

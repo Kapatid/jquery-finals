@@ -1,9 +1,11 @@
 <?php
 
-abstract class BasicEnum {
+abstract class BasicEnum 
+{
     private static $constCacheArray = NULL;
 
-    private static function getConstants() {
+    private static function getConstants() 
+    {
         if (self::$constCacheArray == NULL) {
             self::$constCacheArray = [];
         }
@@ -15,7 +17,8 @@ abstract class BasicEnum {
         return self::$constCacheArray[$calledClass];
     }
 
-    public static function isValidName($name, $strict = false) {
+    public static function isValidName($name, $strict = false) 
+    {
         $constants = self::getConstants();
 
         if ($strict) {
@@ -26,7 +29,8 @@ abstract class BasicEnum {
         return in_array(strtolower($name), $keys);
     }
 
-    public static function isValidValue($value, $strict = true) {
+    public static function isValidValue($value, $strict = true) 
+    {
         $values = array_values(self::getConstants());
         return in_array($value, $values, $strict);
     }
