@@ -1,3 +1,6 @@
+
+
+<div class="home">
 <?php
 $bachelorsDegree = new BachelorsDegree();
 $dataToShow = '';
@@ -9,9 +12,8 @@ foreach ($bachelorsDegree->getBachelorsDegrees() as $bd) {
         <div>$obj</div>
     HTML;
 }
-?>
 
-<div class="home">
-    
-  <?= $dataToShow ?>
+
+echo $dataToShow;
+?>
 </div>
