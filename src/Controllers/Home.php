@@ -9,11 +9,9 @@ foreach ($bachelorsDegree->getBachelorsDegrees() as $bd) {
         <div>$obj</div>
     HTML;
 }
-
-echo <<<HTML
-    <div class="home">
-        $dataToShow
-    </div>
-HTML;
 ?>
+
+<div class="home">
+    <?= $dataToShow ?>
+</div>
 
