@@ -5,7 +5,7 @@ $dataToShow = '';
 foreach ($bachelorsDegree->getBachelorsDegrees() as $bd) {
     $obj = $bd['id'];
     
-    $dataToShow = $dataToShow. <<< HTML
+    $dataToShow = $dataToShow.<<<HTML
         <div>$obj</div>
     HTML;
 }
@@ -13,5 +13,5 @@ foreach ($bachelorsDegree->getBachelorsDegrees() as $bd) {
 
 <div class="home">
     
-  <?php echo $dataToShow ?>
+  <?= $dataToShow ?>
 </div>
