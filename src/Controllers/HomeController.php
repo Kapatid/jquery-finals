@@ -1,19 +1,17 @@
 <?php
+$bachelorsDegree = new BachelorsDegree();
+$dataToShow = '';
 
-abstract class HomeController extends Controller {
+foreach ($bachelorsDegree->getBachelorsDegrees() as $bd) {
+    $obj = $bd['id'];
     
-    public static function index() {
-        $bachelorsDegree = new BachelorsDegree();
-        $dataToShow = '';
-
-        foreach ($bachelorsDegree->getBachelorsDegrees() as $bd) {
-            $obj = $bd['id'];
-            
-            $dataToShow = $dataToShow. <<< HTML
-                <div>$obj</div>
-            HTML;
-        }
-
-        $_SESSION['test'] = $dataToShow;
-    }
+    $dataToShow = $dataToShow. <<< HTML
+        <div>$obj</div>
+    HTML;
 }
+?>
+
+<div class="home">
+    
+  <?php echo $dataToShow ?>
+</div>

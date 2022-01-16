@@ -1,24 +1,16 @@
 <?php
 
 function universalRoutes() {
-    /**
-     * Route::set() takes in the uri request
-     * If it is successful run the function
-     * 
-     */
     Route::set('/', function() {
-        HomeController::index(); 
-        HomeController::CreateView('home'); 
+        require_once('./src/Controllers/HomeController.php');
     });
     
     Route::set('/home', function() {
-        HomeController::index();
-        HomeController::CreateView('home');
+        require_once('./src/Controllers/HomeController.php');
     });
 
     Route::set('/index.php', function() {
-        HomeController::index();
-        HomeController::CreateView('home');
+        require_once('./src/Controllers/HomeController.php');
     });
 }
 
