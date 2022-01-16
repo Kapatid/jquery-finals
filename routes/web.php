@@ -8,17 +8,17 @@ function universalRoutes() {
      */
     Route::set('/', function() {
         HomeController::index(); 
-        HomeController::CreateView('Home'); 
+        HomeController::CreateView('home'); 
     });
     
     Route::set('/home', function() {
         HomeController::index();
-        HomeController::CreateView('Home');
+        HomeController::CreateView('home');
     });
 
     Route::set('/index.php', function() {
         HomeController::index();
-        HomeController::CreateView('Home');
+        HomeController::CreateView('home');
     });
 }
 
