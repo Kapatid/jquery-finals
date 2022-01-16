@@ -1,6 +1,10 @@
 <?php
 
-// (new DotEnv('./.env'))->load();
+// Check if Heroku env variables exits.
+if (!getenv('API_URL')) {
+    (new DotEnv('./.env'))->load();
+}
+
 class Database {
     
     private $apiUrl;
