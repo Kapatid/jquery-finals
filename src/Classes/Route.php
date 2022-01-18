@@ -1,5 +1,4 @@
 <?php
-
 abstract class Route 
 {
 
@@ -12,8 +11,6 @@ abstract class Route
     public static function set(string $route, object $function) 
     {
         self::$validRoutes[] = $route;
-
-        // print_r(self::$validRoutes); 
 
         if ($_SERVER['REQUEST_URI'] == $route) {
             unset($_SESSION['error']);
@@ -31,6 +28,6 @@ abstract class Route
 
     public static function requireLayout(string $name) 
     {
-        require_once('./src/layouts/'.$name.'.php');
+        require_once('./src/Layouts/'.$name.'.php');
     }
 }

@@ -1,0 +1,226 @@
+#home-bg-vid {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+#home {
+  z-index: 0;
+  width: 70%;
+  height: 80vh;
+
+  display: grid;
+  place-items: center;
+}
+#ciit-logo {
+  width: 350px;
+  filter: drop-shadow(2px 3px 2px #000);
+}
+#home-btn {
+  opacity: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  grid-template-columns: 1fr 0.5fr;
+  position: absolute;
+  bottom: 40%;
+  color: white;
+  filter: drop-shadow(1px 2px 1px #000);
+  font-weight: bold;
+  transition: 0.05s all ease-in-out;
+}
+#home-btn:hover {
+  transform: scale(1.3);
+}
+#home-btn img {
+  transform: scale(0.7);
+}
+
+#home-container {
+  top: 0; /* CHANGE TO 100% ONCE DONE */
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+
+  display: grid; /* CHANGE TO NONE ONCE DONE */
+  place-items: center;
+  grid-template-columns: 65% 35%;
+  position: absolute;
+  transition: all 300ms cubic-bezier(0.075, 0.820, 0.165, 1.000); /* easeOutCirc */
+}
+.btn-close {
+  z-index: 50;
+  cursor: pointer;
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  transform: scale(0.6);
+}
+.btn::after  {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background-color: #000;
+  transition: all 300ms cubic-bezier(0.075, 0.820, 0.165, 1.000); /* easeOutCirc */
+}
+.btn:hover::after {
+  width: 100%;
+}
+
+
+#home-content-left {
+  background-color: white;
+  display: grid;
+  place-items: center;
+  grid-template-columns: 8% 1fr;
+  width: 100%;
+  height: 100vh;
+}
+#home-content-btns {
+  height: 30vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  place-self: flex-end;
+}
+.sideway-btn {
+  cursor: pointer;
+  padding-bottom: 8px;
+  height: max-content;
+  width: max-content;
+  transform: rotate(-90deg);
+}
+.sideway-btn.active {
+  font-weight: bolder;
+}
+.sideway-btn.active::after {
+  width: 100%;
+}
+
+
+#home-content-body {
+  width: 100%;
+  height: 90vh;
+  align-self: flex-end;
+}
+#container-school {
+  display: none; /* REVERT */
+}
+#container-school > h1,
+#container-college > h1 {
+  font-size: 5rem;
+  font-family: MontserratBold;
+}
+
+
+#container-college {
+  position: relative;
+  display: grid; /* REVERT */
+}
+.bachelors-degree {
+  display: none;
+  position: absolute;
+  place-content: flex-start;
+  overflow: auto;
+  background-color: white;
+  width: 100%;
+  height: 88vh;
+  scrollbar-width: thin;
+}
+.bachelors-degree > h1 {
+  font-size: 3rem;
+  height: max-content;
+  font-family: MontserratBold;
+}
+.bachelors-degree h3 {
+  margin-top: 1.5rem;
+  font-family: MontserratBold;
+}
+.btn-degree-exit {
+  width: max-content;
+  position: relative;
+  padding-right: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.btn-degree-exit::after {
+  content: '';
+  position: absolute;
+  height: 3px;
+  width: 0%;
+  bottom: 0;
+  right: 0;
+  background-color: #000;
+  transition: all 300ms cubic-bezier(0.075, 0.820, 0.165, 1.000); /* easeOutCirc */
+}
+.btn-degree-exit:hover::after {
+  width: 100%;
+}
+.btn-degree-exit img {
+  transform: scale(0.6);
+}
+#bachelors-degree-description {
+  margin-top: 1.5rem;
+}
+#bachelors-degree-specializedSubjects,
+#bachelors-degree-scholarships {
+  display: grid;
+  margin-left: 1rem;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+#home-content-right {
+  width: 100%;
+  height: 100vh;
+}
+#home-content-right img {
+  pointer-events: none;
+  position: absolute;
+}
+
+/* MOBILE */
+@media (max-width: 35em) {
+  
+  html {
+    font-size: 12px;
+  }
+
+  #ciit-logo {
+    width: 300px;
+  }
+
+  #home-container {
+    grid-template-columns: 1fr;
+  }
+
+  #home-content-right {
+    display: none;
+  }
+  #home-content-left {
+    grid-template-columns: 5% 1fr;
+  }
+
+  #home-content-body {
+    width: 90%;
+  }
+  #container-school > h1,
+  #container-college > h1 {
+    font-size: 4.5rem;
+  }
+
+  #bachelors-degree-specializedSubjects,
+  #bachelors-degree-scholarships {
+    grid-template-columns: 1fr;
+  }
+}

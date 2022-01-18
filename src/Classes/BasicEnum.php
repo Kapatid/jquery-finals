@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Source: https://stackoverflow.com/a/254543
+ */
 abstract class BasicEnum 
 {
     private static $constCacheArray = NULL;
