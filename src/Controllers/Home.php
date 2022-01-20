@@ -1,9 +1,12 @@
 <?php
 $bachelorsDegree = new BachelorsDegree();
 $degrees = $bachelorsDegree->getBachelorsDegrees();
+$corporateTraining = new CorporateTraining();
+$corporateTrainings = $corporateTraining->getCorporateTrainings();
 
 $degreesButtons = '';
 $degreesHTML = '';
+$corporateTrainingHTML = '';
 
 foreach ($degrees as $bd) {
     $id = 'degree_'.$bd->__get('id');
@@ -67,6 +70,21 @@ foreach ($degrees as $bd) {
                 Back
             </div>
 
+            <div class="el" id="bachelors-degree-more-info">
+                <div>
+                    <h4>PROGRAM DURATION</h4>
+                    <p>$programDuration</p>
+                </div>
+                <div>
+                    <h4>ADMISSION CONTACT</h4>
+                    <p>$admisionContact</p>
+                </div>
+                <div>
+                    <h4>DOWNLOADS</h4>
+                    <p><a target="_blank" href=$downloads>Course Brochure</a></p>
+                </div>
+            </div>
+
             <p class="el" id="bachelors-degree-description">$description</p>
 
             <h3 class="el">What You Will Learn</h3>
@@ -83,6 +101,82 @@ foreach ($degrees as $bd) {
             </div>
         </div>
     HTML;
+}
+
+foreach ($corporateTrainings as $ct) {
+    $ctTitle = $ct->__get('title');
+    $ctDescription = $ct->__get('description');
+    $ctProgramDuration = $ct->__get('programDuration');
+    $ctAdmisionContact = $ct->__get('admisionContact');
+    $ctProgramsOffered = $ct->__get('programsOffered');
+
+    $programsOfferedHTML = '';
+    $programsOptionHTML = '';
+
+    foreach($ctProgramsOffered as $po) {
+        $programsOfferedHTML = $programsOfferedHTML.<<<HTML
+            <li>$po</li>
+        HTML;
+        $programsOptionHTML = $programsOptionHTML.<<<HTML
+            <option value="$po">$po</option>
+        HTML;
+    }
+
+    $corporateTrainingHTML = $corporateTrainingHTML.<<<HTML
+        <div class="corporate-training">
+            <div class="el" id="corporate-training-more-info">
+                <div>
+                    <h4>PROGRAM DURATION</h4>
+                    <p>$ctProgramDuration</p>
+                </div>
+                <div>
+                    <h4>ADMISSION CONTACT</h4>
+                    <p>$ctAdmisionContact</p>
+                </div>
+            </div>
+
+            <p class="el" id="corporate-degree-description">$ctDescription</p>
+            
+            <div>
+                <h3>Programs Offered</h3>
+                <div class="el" id="corporate-training-programs">
+                    <ul>$programsOfferedHTML</ul>
+                </div>
+            </div>
+
+            <div class="el container-btn-ct-register"><button>REGISTER</button></div>
+        </div>
+    HTML;
+}
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $timezone = date_default_timezone_get();
+    date_default_timezone_set($timezone);
+
+    $createdAt = date('Y-m-d H:i:s a', time());
+    $email = $_REQUEST['email'];
+    $firstName = $_REQUEST['firstName'];
+    $lastName = $_REQUEST['lastName'];
+    $age = $_REQUEST['age'];
+    $program = $_REQUEST['program'];
+
+    if (!empty($email) && !empty($firstName) &&
+        !empty($lastName) && !empty($age) &&
+        !empty($program)) {
+
+        $obj = (object)[
+            'createdAt' => $createdAt,
+            'email' => $email, 
+            'firstName' => $firstName, 
+            'lastName' => $lastName, 
+            'age' => $age, 
+            'program' => $program
+        ];
+
+        
+        $corporateTraining->ctRegister($obj);
+    }
 }
 ?>
 
@@ -110,8 +204,9 @@ foreach ($degrees as $bd) {
 
     <div id="home-content-left">
         <div id="home-content-btns">
-            <div class="btn sideway-btn active" id="btn-school">School</div>
-            <div class="btn sideway-btn" id="btn-college">College</div>
+            <div class="sideway-btn active" id="btn-school">School</div>
+            <div class="sideway-btn" id="btn-college">College</div>
+            <div class="sideway-btn" id="btn-corporate-training">Corporate Training</div>
         </div>
 
         <div id="home-content-body">
@@ -122,7 +217,7 @@ foreach ($degrees as $bd) {
                     provide you with an affordable college program that puts you on 
                     the pathway to career success. And while you progress down this 
                     pathway, we hope that our campus can serve as a place you would 
-                    love to call your second home. Compared to other universities, 
+                    love to call yo ur second home. Compared to other universities, 
                     we're a relatively small school and young to boot with only 15 
                     years under our belt. However, we believe that having a younger 
                     management team allows us to be dynamic, innovative, efficient, 
@@ -139,11 +234,46 @@ foreach ($degrees as $bd) {
 
                 <?= $degreesHTML ?>
             </div>
+
+            <div id="container-corporate-training">
+                <h1>Corporate Training</h1>
+                <?= $corporateTrainingHTML ?>
+            </div>
         </div>
     </div>
 
     <div id="home-content-right">
         <img src="./public/img/ciit_building3.jpg" alt="">
     </div>
-</div>
+</div> -->
 
+<div id="container-form-ct">
+    <form method="POST" id="form-ct-register" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+        <label for="email">Email</label>
+        <input type="text" name="email" required>
+
+        <label for="firstName">First Name</label>
+        <input type="text" name="firstName" required>
+
+        <label for="lastName">Last Name</label>
+        <input type="text" name="lastName" required>
+
+        <label for="age">Age</label>
+        <input 
+            id="ct-age-input" 
+            type="number" 
+            name="age" 
+            maxlength="3"
+            required
+        >
+
+        <label for="program">Program</label>
+
+        <select name="program" id="program-select" required>
+            <option value="">Select a program</option>
+            <?= $programsOptionHTML ?>
+        </select>
+        
+        <button type="submit">Register</button>
+    </form>
+</div>
