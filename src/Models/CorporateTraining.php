@@ -45,6 +45,6 @@ class CorporateTraining extends Database
     }
 
     public function ctRegister(object $obj) {
-        $this->db->post(TableName::CTResgisters, $obj);
+        return $this->db->post(TableName::CTResgisters, $obj);
     }
 }

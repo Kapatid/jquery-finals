@@ -98,25 +98,44 @@ $('.btn-degree-exit').on('click', function() {
 })
 
 
-async function postData(url = '', data = {}) {
-  const response = await fetch(url, {
-    method: 'POST',
-    mode: 'cors',
-    cache: 'no-cache',
-    credentials: 'same-origin',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    redirect: 'follow',
-    referrerPolicy: 'no-referrer', 
-    body: JSON.stringify(data)
-  });
-  return response.json()
-}
-
-
+$('#btn-open-register').on('click', function () {
+  $('#container-form-ct').css({ display: 'grid' })
+  anime({
+    targets: `#form-ct-register`,
+    opacity: [0, 1],
+    translateY: [100, 0],
+    easing: 'cubicBezier(0.075, 0.820, 0.165, 1.000)',
+    duration: 200
+  })
+})
+$('#form-btn-close').on('click', function () {
+  anime({
+    targets: '#form-ct-register',
+    opacity: [1, 0],
+    translateY: [0, 100],
+    easing: 'cubicBezier(0.075, 0.820, 0.165, 1.000)',
+    duration: 200,
+    complete: function(anim) {
+      $('#container-form-ct').css({ display: 'none' })
+    }
+  })
+})
 $('#ct-age-input').on('input', function () {
   this.value = this.value.slice(0,this.maxLength)
 
   !isNaN($(this).val()) && $(this).val($(this).val())
+})
+
+
+$('#status-btn-close').on('click', function () {
+  anime({
+    targets: '#home-status',
+    opacity: [1, 0],
+    translateY: [0, 100],
+    easing: 'linear',
+    duration: 100,
+    complete: function(anim) {
+      $('#home-status').css({ display: 'none' })
+    }
+  })
 })

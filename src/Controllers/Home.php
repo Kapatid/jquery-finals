@@ -8,6 +8,9 @@ $degreesButtons = '';
 $degreesHTML = '';
 $corporateTrainingHTML = '';
 
+$statusMsg = '';
+$showStatus = '';
+
 foreach ($degrees as $bd) {
     $id = 'degree_'.$bd->__get('id');
     $title = $bd->__get('title');
@@ -144,7 +147,7 @@ foreach ($corporateTrainings as $ct) {
                 </div>
             </div>
 
-            <div class="el container-btn-ct-register"><button>REGISTER</button></div>
+            <div class="el container-btn-ct-register"><button id="btn-open-register">REGISTER</button></div>
         </div>
     HTML;
 }
@@ -175,7 +178,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         ];
 
         
-        $corporateTraining->ctRegister($obj);
+        $result = $corporateTraining->ctRegister($obj);
+
+        if (!empty($result)) {
+            $statusMsg = 'Registration successful!';
+            $showStatus = 'display: flex;';
+        }
     }
 }
 ?>
@@ -245,12 +253,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div id="home-content-right">
         <img src="./public/img/ciit_building3.jpg" alt="">
     </div>
-</div> -->
+</div>
 
 <div id="container-form-ct">
     <form method="POST" id="form-ct-register" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+        <span id="form-btn-close">
+            <img src="./public/img/close_black_48dp.svg" alt="close_black">
+        </span>
         <label for="email">Email</label>
-        <input type="text" name="email" required>
+        <input type="email" name="email" required>
 
         <label for="firstName">First Name</label>
         <input type="text" name="firstName" required>
@@ -268,12 +279,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         >
 
         <label for="program">Program</label>
-
-        <select name="program" id="program-select" required>
-            <option value="">Select a program</option>
-            <?= $programsOptionHTML ?>
-        </select>
         
+
+        <div class="select-dropdown">
+            <select name="program" id="program-select" required>
+                <option value="">Select a program</option>
+                <?= $programsOptionHTML ?>
+            </select>
+        </div>
+
         <button type="submit">Register</button>
     </form>
+</div>
+
+<div id="home-status" style="<?= $showStatus ?>" >
+    <?= $statusMsg ?>
+    <img 
+        id="status-btn-close" 
+        src="./public/img/close_black_48dp.svg" 
+        alt="close_black"
+    >
 </div>
