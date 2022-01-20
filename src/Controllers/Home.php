@@ -63,7 +63,7 @@ foreach ($degrees as $bd) {
     }
 
     $degreesHTML = $degreesHTML.<<<HTML
-        <div class="$id         ">
+        <div class="$id bachelors-degree">
             <h1 class="el">$title</h1>
             <h2 class="el">$subtitle</h2>
             <div class="el btn-degree-exit"> 
