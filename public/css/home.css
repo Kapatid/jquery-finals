@@ -203,10 +203,12 @@
 
 .corporate-training {
   width: 100%;
-  height: 88vh;
+  height: 70vh;
   display: grid;
   row-gap: 30px;
   place-content: start;
+  overflow: auto;
+  scrollbar-width: thin;
 }
 .corporate-training #corporate-training-more-info {
   width: 100%;
