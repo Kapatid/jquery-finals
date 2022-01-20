@@ -1,7 +1,13 @@
 import anime from './anime.es.js'
 
+
+$('#home-bg-vid').on('ended', () => {
+  $('#home-btn').animate({ opacity: 1 }, 150)
+})
+
+
 $('#ciit-logo').on('click mouseover', () => {
-  $('#home-btn').animate({ opacity: 1 })
+  $('#home-btn').animate({ opacity: 1 }, 150)
 })
 
 $('#home-btn').on('click', () => {
