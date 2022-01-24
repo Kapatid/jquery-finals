@@ -282,14 +282,14 @@
 #form-ct-register #btn-submit {
   margin-top: 25px;
 }
-#form-ct-register #btn-submit-loading {
-  margin-top: 25px;
-  pointer-events: none;
-  display: none;
-  background-color: black;
-}
 #form-ct-register #btn-submit-loading img {
   width: 60px;
+}
+#form-ct-register #btn-submit-loading {
+  display: none;
+  margin-top: 25px;
+  pointer-events: none;
+  background-color: black;
 }
 
 
