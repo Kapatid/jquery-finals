@@ -279,14 +279,14 @@
   padding: 6px 10px 6px 10px;
   box-sizing: border-box;
 }
-#form-ct-register #btn-submit {
+#btn-submit {
   margin-top: 25px;
 }
-#form-ct-register #btn-submit-loading img {
+#btn-submit-loading img {
   width: 60px;
 }
-#form-ct-register #btn-submit-loading {
-  display: none;
+#btn-submit-loading {
+  display: none !important;
   margin-top: 25px;
   pointer-events: none;
   background-color: black;
