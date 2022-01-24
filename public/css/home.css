@@ -286,7 +286,7 @@
   width: 60px;
 }
 #btn-submit-loading {
-  display: none !important;
+  display: none;
   margin-top: 25px;
   pointer-events: none;
   background-color: black;
