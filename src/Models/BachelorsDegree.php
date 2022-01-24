@@ -36,7 +36,7 @@ class BachelorsDegree extends Database
      */
     public function getBachelorsDegrees(): array
     {
-        $data = $this->db->getAll(TableName::BachelorsDegrees);
+        $data = $this->db->getAll('bachelorsDegrees');
         $bds = array();
 
         foreach ($data as $bachelorsDegree) {

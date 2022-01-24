@@ -7,8 +7,7 @@
  * 
  * Source: https://dev.to/fadymr/php-create-your-own-php-dotenv-3k2i
  */
-class DotEnv
-{
+class DotEnv {
     /**
      * The directory where the .env file can be located.
      *

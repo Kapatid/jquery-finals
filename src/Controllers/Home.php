@@ -26,12 +26,14 @@ foreach ($degrees as $bd) {
     $degreesButtons = $degreesButtons.<<<HTML
         <button class='btn-bd' id=$id>$title</button>
     HTML;
+
     $specializedSubjectsHTML = '';
     $scholarshipsHTML = '';
 
     foreach ($specializedSubjects as $specializedSubject) {
         $subjects = '';
         $year = $specializedSubject["year"];
+
         foreach($specializedSubject['subjects'] as $subject) {
             $subjects = $subjects.<<<HTML
                 <li>$subject</li>
@@ -48,6 +50,7 @@ foreach ($degrees as $bd) {
     foreach ($scholarships as $scholarship) {
         $desc = '';
         $sType = $scholarship['type'];
+        
         foreach($scholarship['description'] as $des) {
             $desc = $desc.<<<HTML
                 <li>$des</li>
@@ -154,10 +157,7 @@ foreach ($corporateTrainings as $ct) {
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $timezone = date_default_timezone_get();
-    date_default_timezone_set($timezone);
-
-    $createdAt = date('Y-m-d H:i:s a', time());
+    $createdAt = gmdate("Y-m-d H:i:s");
     $email = $_REQUEST['email'];
     $firstName = $_REQUEST['firstName'];
     $lastName = $_REQUEST['lastName'];

@@ -32,7 +32,7 @@ class CorporateTraining extends Database
      */
     public function getCorporateTrainings(): array
     {
-        $data = $this->db->getAll(TableName::CorporateTraining);
+        $data = $this->db->getAll('corporateTraining');
         $cts = array();
 
         foreach ($data as $corporateTraining) {
@@ -45,6 +45,6 @@ class CorporateTraining extends Database
     }
 
     public function ctRegister(object $obj) {
-        return $this->db->post(TableName::CTResgisters, $obj);
+        return $this->db->post('ctRegisters', $obj);
     }
 }

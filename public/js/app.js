@@ -80,7 +80,7 @@ $('#btn-corporate-training').on('click', () => {
 $('.btn-bd').on('click', function(btn) {
   const id = $(this).attr('id')
   
-  $('.bachelors-degree').each(function (index) {
+  $('.bachelors-degree').each(function(index) {
     const elem = $(this)
     const firstClass = elem.attr('class').split(' ')[0]
 
@@ -104,7 +104,7 @@ $('.btn-degree-exit').on('click', function() {
 
 
 // Corporate Training form
-$('#btn-open-register').on('click', function () {
+$('#btn-open-register').on('click', function() {
   $('#container-form-ct').css({ display: 'grid' })
   anime({
     targets: `#form-ct-register`,
@@ -114,7 +114,7 @@ $('#btn-open-register').on('click', function () {
     duration: 200
   })
 })
-$('#form-btn-close').on('click', function () {
+$('#form-btn-close').on('click', function() {
   anime({
     targets: '#form-ct-register',
     opacity: [1, 0],
@@ -126,12 +126,12 @@ $('#form-btn-close').on('click', function () {
     }
   })
 })
-$('#ct-age-input').on('input', function () {
+$('#ct-age-input').on('input', function() {
   this.value = this.value.slice(0,this.maxLength)
 
   !isNaN($(this).val()) && $(this).val($(this).val())
 })
-$('#btn-submit').on('click', function () {
+$('#btn-submit').on('click', function() {
   if ($('input[name="email"]').val() && $('input[name="email"]').val() && 
       $('input[name="email"]').val() && $('input[name="email"]').val() && 
       $('select[name="program"]').val()) {
@@ -139,13 +139,13 @@ $('#btn-submit').on('click', function () {
     $('#btn-submit-loading').css({ display: 'grid' })
   }
 })
-$('#btn-submit-loading').on('click', function () {
+$('#btn-submit-loading').on('click', function() {
   this.preventDefault();
 })
 
 
 // Floating status
-$('#status-btn-close').on('click', function () {
+$('#status-btn-close').on('click', function() {
   anime({
     targets: '#home-status',
     opacity: [1, 0],
