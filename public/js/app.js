@@ -1,21 +1,19 @@
 import anime from './anime.es.js'
 
-
+// Home interactions
 $('#home-bg-vid').on('ended', () => {
   $('#home-btn').animate({ opacity: 1 }, 150)
 })
-
-
 $('#ciit-logo').on('click mouseover', () => {
   $('#home-btn').animate({ opacity: 1 }, 150)
 })
-
 $('#home-btn').on('click', () => {
   $('#home-container').css({ display: 'grid' })
   $('#home-container').animate({ top: 0 })
 })
 
 
+// Buttons for CIIT information pages
 $('.btn-close').on('click', () => {
   $('#home-container').animate(
     { top: '100%' }, 500, 
@@ -78,6 +76,7 @@ $('#btn-corporate-training').on('click', () => {
 })
 
 
+// Bachelor's Degree Elements
 $('.btn-bd').on('click', function(btn) {
   const id = $(this).attr('id')
   
@@ -104,6 +103,7 @@ $('.btn-degree-exit').on('click', function() {
 })
 
 
+// Company Training
 $('#btn-open-register').on('click', function () {
   $('#container-form-ct').css({ display: 'grid' })
   anime({
@@ -131,8 +131,16 @@ $('#ct-age-input').on('input', function () {
 
   !isNaN($(this).val()) && $(this).val($(this).val())
 })
+$('#btn-submit').on('click', function () {
+  $(this).css({ display: 'none' })
+  $('#btn-submit-loading').css({ display: 'grid' })
+})
+$('#btn-submit-loading').on('click', function () {
+  this.preventDefault();
+})
 
 
+// Floating status
 $('#status-btn-close').on('click', function () {
   anime({
     targets: '#home-status',

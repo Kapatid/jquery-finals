@@ -272,13 +272,24 @@
 #form-ct-register input {
   width: 100%;
   border-radius: 0.5em;
-  border: 1px solid black;
+  border: 2px solid black;
   padding: 6px 10px 6px 10px;
   box-sizing: border-box;
 }
-#form-ct-register > button {
+#form-ct-register #btn-submit {
   margin-top: 25px;
+  
 }
+#form-ct-register #btn-submit-loading {
+  margin-top: 25px;
+  pointer-events: none;
+  display: none;
+  background-color: black;
+}
+#form-ct-register #btn-submit-loading img {
+  width: 60px;
+}
+
 
 #home-status {
   z-index: 50;

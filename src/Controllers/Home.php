@@ -182,7 +182,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if (!empty($result)) {
             $statusMsg = 'Registration successful!';
-            $showStatus = 'display: flex;';
+            $showStatus = 'display: flex; color: green;';
+        }
+        else {
+            $statusMsg = 'Request error...';
+            $showStatus = 'display: flex; color: red;';
         }
     }
 }
@@ -288,7 +292,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </select>
         </div>
 
-        <button type="submit">Register</button>
+        <button id="btn-submit" type="submit">Register</button>
+        <button id="btn-submit-loading"><img src="./public/img/three-dots.svg" alt="loading-icon"></button>
     </form>
 </div>
 
