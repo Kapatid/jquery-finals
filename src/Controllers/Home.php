@@ -189,7 +189,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <!-- HOME HTML -->
-<video id="home-bg-vid" autoplay muted>
+<video id="home-bg-vid" autoplay muted loop>
 
     <source src="./public/videos/ciit_animation.mp4"
             type="video/mp4">
