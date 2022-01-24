@@ -1,3 +1,4 @@
+/* Home styles */
 #home-bg-vid {
   width: 100%;
   height: 100vh;
@@ -9,7 +10,6 @@
   bottom: 0;
   z-index: -1;
 }
-
 #home {
   z-index: 0;
   width: 70%;
@@ -42,6 +42,8 @@
   transform: scale(0.7);
 }
 
+
+/* Floating Home & btn styles */
 #home-container {
   top: 100%;
   z-index: 1;
@@ -75,8 +77,6 @@
 .btn:hover::after {
   width: 100%;
 }
-
-
 #home-content-left {
   background-color: white;
   display: grid;
@@ -118,8 +118,6 @@
 .sideway-btn.active::after {
   height: 100%;
 }
-
-
 #home-content-body {
   width: 100%;
   height: 90vh;
@@ -136,6 +134,7 @@
 }
 
 
+/* Bachelor's Degrees Page Styles */
 #container-college,
 #container-corporate-training  {
   position: relative;
@@ -201,6 +200,7 @@
 }
 
 
+/* Coporate Training styles */
 .corporate-training {
   width: 100%;
   height: 70vh;
@@ -228,6 +228,7 @@
 }
 
 
+/* CIIT Building */
 #home-content-right {
   width: 100%;
   height: 100vh;
@@ -237,6 +238,8 @@
   position: absolute;
 }
 
+
+/* Corporate Training Form */
 #form-btn-close {
   width: 100%;
   display: grid;
@@ -278,7 +281,6 @@
 }
 #form-ct-register #btn-submit {
   margin-top: 25px;
-  
 }
 #form-ct-register #btn-submit-loading {
   margin-top: 25px;
@@ -291,6 +293,7 @@
 }
 
 
+/* Floating status styles */
 #home-status {
   z-index: 50;
   display: none;
@@ -312,6 +315,7 @@
   padding: 8px;
   border-radius: 50%;
 }
+
 
 /* MOBILE */
 @media (max-width: 35em) {

@@ -283,8 +283,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         >
 
         <label for="program">Program</label>
-        
-
         <div class="select-dropdown">
             <select name="program" id="program-select" required>
                 <option value="">Select a program</option>

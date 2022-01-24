@@ -13,7 +13,7 @@ $('#home-btn').on('click', () => {
 })
 
 
-// Buttons for CIIT information pages
+// Buttons for floating home
 $('.btn-close').on('click', () => {
   $('#home-container').animate(
     { top: '100%' }, 500, 
@@ -103,7 +103,7 @@ $('.btn-degree-exit').on('click', function() {
 })
 
 
-// Company Training
+// Corporate Training form
 $('#btn-open-register').on('click', function () {
   $('#container-form-ct').css({ display: 'grid' })
   anime({
@@ -132,8 +132,12 @@ $('#ct-age-input').on('input', function () {
   !isNaN($(this).val()) && $(this).val($(this).val())
 })
 $('#btn-submit').on('click', function () {
-  $(this).css({ display: 'none' })
-  $('#btn-submit-loading').css({ display: 'grid' })
+  if ($('input[name="email"]').val() && $('input[name="email"]').val() && 
+      $('input[name="email"]').val() && $('input[name="email"]').val() && 
+      $('select[name="program"]').val()) {
+    $(this).css({ display: 'none' })
+    $('#btn-submit-loading').css({ display: 'grid' })
+  }
 })
 $('#btn-submit-loading').on('click', function () {
   this.preventDefault();
