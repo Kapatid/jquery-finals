@@ -1,0 +1,356 @@
+/* Home styles */
+#home-bg-vid {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+#home {
+  z-index: 0;
+  width: 70%;
+  height: 80vh;
+
+  display: grid;
+  place-items: center;
+}
+#ciit-logo {
+  width: 350px;
+  filter: drop-shadow(2px 3px 2px #000);
+}
+#home-btn {
+  opacity: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  grid-template-columns: 1fr 0.5fr;
+  position: absolute;
+  bottom: 40%;
+  color: white;
+  filter: drop-shadow(1px 2px 1px #000);
+  font-weight: bold;
+  transition: 0.05s all ease-in-out;
+}
+#home-btn:hover {
+  transform: scale(1.2);
+}
+#home-btn img {
+  transform: scale(0.7);
+}
+
+
+/* Floating Home & btn styles */
+#home-container {
+  top: 100%;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+
+  display: none;
+  place-items: center;
+  grid-template-columns: 65% 35%;
+  position: absolute;
+  transition: all 300ms cubic-bezier(0.075, 0.820, 0.165, 1.000); /* easeOutCirc */
+}
+.btn-close {
+  z-index: 50;
+  cursor: pointer;
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  transform: scale(0.6);
+}
+.btn::after  {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0.3em;
+  background-color: #000;
+  transition: all 300ms cubic-bezier(0.075, 0.820, 0.165, 1.000); /* easeOutCirc */
+}
+.btn:hover::after {
+  width: 100%;
+}
+#home-content-left {
+  background-color: white;
+  display: grid;
+  place-items: center;
+  grid-template-columns: 8% 1fr;
+  width: 100%;
+  height: 100vh;
+}
+#home-content-btns {
+  width: 100%;
+  display: grid;
+  row-gap: 30px;
+  padding-bottom: 30px;
+  place-items: center;
+  place-self: flex-end;
+}
+.sideway-btn {
+  cursor: pointer;
+  height: max-content;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  user-select: none;
+  text-transform: uppercase;
+  font-family: PoppinsBold;
+}
+.sideway-btn::after  {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -4px;
+  width: 0.2em;
+  height: 0%;
+  background-color: #000;
+  transition: all 300ms cubic-bezier(0.075, 0.820, 0.165, 1.000); /* easeOutCirc */
+}
+.sideway-btn:hover::after {
+  height: 100%;
+}
+.sideway-btn.active::after {
+  height: 100%;
+}
+#home-content-body {
+  width: 100%;
+  height: 90vh;
+  align-self: flex-end;
+}
+#container-school {
+  display: grid;
+}
+#container-school > h1,
+#container-college > h1,
+#container-corporate-training > h1 {
+  font-size: 5rem;
+  font-family: MontserratBold;
+}
+
+
+/* Bachelor's Degrees Page Styles */
+#container-college,
+#container-corporate-training  {
+  position: relative;
+  display: none;
+}
+.bachelors-degree {
+  display: none;
+  position: absolute;
+  top: 0;
+  place-content: flex-start;
+  overflow: auto;
+  background-color: white;
+  width: 100%;
+  height: 88vh;
+  scrollbar-width: thin;
+}
+.bachelors-degree > h1 {
+  font-size: 3rem;
+  height: max-content;
+  font-family: MontserratBold;
+}
+.bachelors-degree h3 {
+  margin-top: 1.5rem;
+  font-family: MontserratBold;
+}
+.btn-degree-exit {
+  width: max-content;
+  position: relative;
+  padding-right: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.btn-degree-exit::after {
+  content: '';
+  position: absolute;
+  height: 3px;
+  width: 0%;
+  bottom: 0;
+  right: 0;
+  background-color: #000;
+  transition: all 300ms cubic-bezier(0.075, 0.820, 0.165, 1.000); /* easeOutCirc */
+}
+.btn-degree-exit:hover::after {
+  width: 100%;
+}
+.btn-degree-exit img {
+  transform: scale(0.6);
+}
+#bachelors-degree-more-info {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+#bachelors-degree-description {
+  margin-top: 1.5rem;
+}
+#bachelors-degree-specializedSubjects,
+#bachelors-degree-scholarships {
+  display: grid;
+  margin-left: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+
+/* Coporate Training styles */
+.corporate-training {
+  width: 100%;
+  height: 70vh;
+  display: grid;
+  row-gap: 30px;
+  place-content: start;
+  overflow: auto;
+  scrollbar-width: thin;
+}
+.corporate-training #corporate-training-more-info {
+  width: 100%;
+  display: flex;
+  column-gap: 20px;
+}
+.corporate-training #corporate-training-programs li {
+  margin-left: 14px;
+}
+.container-btn-ct-register {
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+.container-btn-ct-register button {
+  font-size: 1.2rem;
+}
+
+
+/* CIIT Building */
+#home-content-right {
+  width: 100%;
+  height: 100vh;
+}
+#home-content-right img {
+  pointer-events: none;
+  position: absolute;
+}
+
+
+/* Corporate Training Form */
+#form-btn-close {
+  width: 100%;
+  display: grid;
+  place-content: flex-end;
+  cursor: pointer;
+}
+#form-btn-close img {
+  width: 24px;
+}
+#container-form-ct {
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  place-items: center;
+  position: absolute;
+}
+#form-ct-register {
+  padding: 2rem;
+  width: max-content;
+  display: grid;
+  place-items: center;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0px 5px 54px 7px rgba(0, 0, 0, 0.308);
+}
+#form-ct-register label {
+  place-self: start;
+  margin-top: 10px;
+}
+#form-ct-register input {
+  width: 100%;
+  border-radius: 0.5em;
+  border: 2px solid black;
+  padding: 6px 10px 6px 10px;
+  box-sizing: border-box;
+}
+#btn-submit {
+  margin-top: 25px;
+}
+#btn-submit-loading img {
+  width: 60px;
+}
+#btn-submit-loading {
+  display: none;
+  margin-top: 25px;
+  pointer-events: none;
+  background-color: black;
+}
+
+
+/* Floating status */
+#home-status {
+  z-index: 50;
+  display: none;
+  place-self: center;
+  align-items: center;
+  column-gap: 15px;
+  bottom: 50px;
+  font-size: 1.2rem;
+  position: absolute;
+  background-color: white;
+  padding: 12px 18px 12px 18px;
+  border-radius: 15px;
+  box-shadow: 0px 5px 15px 4px rgba(0, 0, 0, 0.48);
+}
+#status-btn-close {
+  cursor: pointer;
+  width: 20px;
+  background-color: rgba(128, 128, 128, 0.178);
+  padding: 8px;
+  border-radius: 50%;
+}
+
+
+/* MOBILE */
+@media (max-width: 35em) {
+  
+  html {
+    font-size: 12px;
+  }
+
+  #ciit-logo {
+    width: 300px;
+  }
+
+  #home-container {
+    grid-template-columns: 1fr;
+  }
+  .btn-close {
+    top: 20px;
+    right: 10px;
+  }
+
+  #home-content-right {
+    display: none;
+  }
+  #container-school > h1,
+  #container-college > h1,
+  #container-corporate-training > h1 {
+    font-size: 4.5rem;
+  }
+
+  #bachelors-degree-specializedSubjects h4 {
+    margin-top: 0.5rem;
+  }
+  #bachelors-degree-more-info,
+  #bachelors-degree-specializedSubjects,
+  #bachelors-degree-scholarships {
+    grid-template-columns: 1fr;
+  }
+}
