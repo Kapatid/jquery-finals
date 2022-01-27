@@ -1,15 +1,15 @@
 <?php
 
 Route::set('/', function() {
-    Route::requireController('Home');
+    Route::requireController('HomeController');
 });
 
 Route::set('/home', function() {
-    Route::requireController('Home');
+    Route::requireController('HomeController');
 });
 
 Route::set('/index.php', function() {
-    Route::requireController('Home');
+    Route::requireController('HomeController');
 });
 
 if (isset($_SESSION['error'])) {

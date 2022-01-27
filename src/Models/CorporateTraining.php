@@ -2,7 +2,7 @@
 
 class CorporateTraining extends Database 
 {
-    private $db;
+    private Database $db;
     private int $id;
     private string $title;
     private string $description;
