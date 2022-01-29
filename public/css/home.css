@@ -1,5 +1,5 @@
-/* Home styles */
-#home-bg-vid {
+/* ----------->>> Home <<<------------ */
+#home_bg_vid {
   width: 100%;
   height: 100vh;
   object-fit: cover;
@@ -18,11 +18,11 @@
   display: grid;
   place-items: center;
 }
-#ciit-logo {
+#ciit_logo {
   width: 350px;
   filter: drop-shadow(2px 3px 2px #000);
 }
-#home-btn {
+#home_btn {
   opacity: 0;
   cursor: pointer;
   display: flex;
@@ -35,16 +35,16 @@
   font-weight: bold;
   transition: 0.05s all ease-in-out;
 }
-#home-btn:hover {
+#home_btn:hover {
   transform: scale(1.2);
 }
-#home-btn img {
+#home_btn img {
   transform: scale(0.7);
 }
 
 
-/* Floating Home & btn styles */
-#home-container {
+/* ------>>> Floating Home <<<-------- */
+#home_container {
   top: 100%;
   z-index: 1;
   width: 100%;
@@ -72,12 +72,12 @@
   width: 0;
   height: 0.3em;
   background-color: #000;
-  transition: all 300ms cubic-bezier(0.075, 0.820, 0.165, 1.000); /* easeOutCirc */
+  transition: all 300ms cubic-bezier(0.075, 0.820, 0.165, 1.000);
 }
 .btn:hover::after {
   width: 100%;
 }
-#home-content-left {
+#home_content_left {
   background-color: white;
   display: grid;
   place-items: center;
@@ -85,7 +85,7 @@
   width: 100%;
   height: 100vh;
 }
-#home-content-btns {
+#home_content_btns {
   width: 100%;
   display: grid;
   row-gap: 30px;
@@ -118,25 +118,25 @@
 .sideway-btn.active::after {
   height: 100%;
 }
-#home-content-body {
+#home_content_body {
   width: 100%;
   height: 90vh;
   align-self: flex-end;
 }
-#container-school {
+#container_school {
   display: grid;
 }
-#container-school > h1,
-#container-college > h1,
-#container-corporate-training > h1 {
+#container_school > h1,
+#container_college > h1,
+#container_corporate_training > h1 {
   font-size: 5rem;
   font-family: MontserratBold;
 }
 
 
-/* Bachelor's Degrees Page Styles */
-#container-college,
-#container-corporate-training  {
+/* ---->>> Bachelor's Degrees <<<----- */
+#container_college,
+#container_corporate_training  {
   position: relative;
   display: none;
 }
@@ -184,23 +184,23 @@
 .btn-degree-exit img {
   transform: scale(0.6);
 }
-#bachelors-degree-more-info {
+#bachelors_degree_more_info {
   margin-top: 1.5rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
-#bachelors-degree-description {
+#bachelors_degree_description {
   margin-top: 1.5rem;
 }
-#bachelors-degree-specializedSubjects,
-#bachelors-degree-scholarships {
+#bachelors_degree_specializedSubjects,
+#bachelors_degree_scholarships {
   display: grid;
   margin-left: 1rem;
   grid-template-columns: repeat(3, 1fr);
 }
 
 
-/* Coporate Training styles */
+/* ----->>> Coporate Training <<<----- */
 .corporate-training {
   width: 100%;
   height: 70vh;
@@ -228,28 +228,28 @@
 }
 
 
-/* CIIT Building */
-#home-content-right {
+/* ------->>> CIIT Building <<<------- */
+#home_content_right {
   width: 100%;
   height: 100vh;
 }
-#home-content-right img {
+#home_content_right img {
   pointer-events: none;
   position: absolute;
 }
 
 
-/* Corporate Training Form */
-#form-btn-close {
+/* ---->>> Corporate Training <<<----- */
+#form_btn_close {
   width: 100%;
   display: grid;
   place-content: flex-end;
   cursor: pointer;
 }
-#form-btn-close img {
+#form_btn_close img {
   width: 24px;
 }
-#container-form-ct {
+#container_form_ct {
   z-index: 10;
   top: 0;
   left: 0;
@@ -259,7 +259,7 @@
   place-items: center;
   position: absolute;
 }
-#form-ct-register {
+#form_ct_register {
   padding: 2rem;
   width: max-content;
   display: grid;
@@ -268,24 +268,24 @@
   border-radius: 20px;
   box-shadow: 0px 5px 54px 7px rgba(0, 0, 0, 0.308);
 }
-#form-ct-register label {
+#form_ct_register label {
   place-self: start;
   margin-top: 10px;
 }
-#form-ct-register input {
+#form_ct_register input {
   width: 100%;
   border-radius: 0.5em;
   border: 2px solid black;
   padding: 6px 10px 6px 10px;
   box-sizing: border-box;
 }
-#btn-submit {
+#btn_submit {
   margin-top: 25px;
 }
-#btn-submit-loading img {
+#btn_submit_loading img {
   width: 60px;
 }
-#btn-submit-loading {
+#btn_submit_loading {
   display: none;
   margin-top: 25px;
   pointer-events: none;
@@ -293,8 +293,8 @@
 }
 
 
-/* Floating status */
-#home-status {
+/* ----->>> Floating status <<<------- */
+#home_status {
   z-index: 50;
   display: none;
   place-self: center;
@@ -308,7 +308,7 @@
   border-radius: 15px;
   box-shadow: 0px 5px 15px 4px rgba(0, 0, 0, 0.48);
 }
-#status-btn-close {
+#status_btn_close {
   cursor: pointer;
   width: 20px;
   background-color: rgba(128, 128, 128, 0.178);
@@ -316,19 +316,20 @@
   border-radius: 50%;
 }
 
-
-/* MOBILE */
+/* ----------------------------------- */
+/* --------->>> MOBILE <<<------------ */
+/* ----------------------------------- */
 @media (max-width: 35em) {
   
   html {
     font-size: 12px;
   }
 
-  #ciit-logo {
+  #ciit_logo {
     width: 300px;
   }
 
-  #home-container {
+  #home_container {
     grid-template-columns: 1fr;
   }
   .btn-close {
@@ -336,21 +337,21 @@
     right: 10px;
   }
 
-  #home-content-right {
+  #home_content_right {
     display: none;
   }
-  #container-school > h1,
-  #container-college > h1,
-  #container-corporate-training > h1 {
+  #container_school > h1,
+  #container_college > h1,
+  #container_corporate_training > h1 {
     font-size: 4.5rem;
   }
 
-  #bachelors-degree-specializedSubjects h4 {
+  #bachelors_degree_specializedSubjects h4 {
     margin-top: 0.5rem;
   }
-  #bachelors-degree-more-info,
-  #bachelors-degree-specializedSubjects,
-  #bachelors-degree-scholarships {
+  #bachelors_degree_more_info,
+  #bachelors_degree_specializedSubjects,
+  #bachelors_degree_scholarships {
     grid-template-columns: 1fr;
   }
 }

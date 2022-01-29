@@ -15,7 +15,7 @@
 <body>
   <div id="root">
     <!-- Includes all of the pages based on page name -->
-    <?php require_once('./routes/web.php');?>
+    <?php require_once('./src/Routes/web.php');?>
   </div>
 
   <script type="text/javascript" src="./public/js/jquery.min.js"></script>

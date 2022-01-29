@@ -11,7 +11,7 @@ $corporateTrainingHTML = '';
 $status = ['msg' => '', 'style' => ''];
 
 foreach ($degrees as $bd) {
-    $id = 'degree_'.$bd->__get('id');
+    $id = 'degree-'.$bd->__get('id');
     $title = $bd->__get('title');
     $subtitle = $bd->__get('subtitle');
     $description = $bd->__get('description');
@@ -75,7 +75,7 @@ foreach ($degrees as $bd) {
                 Back
             </div>
 
-            <div class="el" id="bachelors-degree-more-info">
+            <div class="el" id="bachelors_degree_more_info">
                 <div>
                     <h4>PROGRAM DURATION</h4>
                     <p>$programDuration</p>
@@ -90,18 +90,18 @@ foreach ($degrees as $bd) {
                 </div>
             </div>
 
-            <p class="el" id="bachelors-degree-description">$description</p>
+            <p class="el" id="bachelors_degree_description">$description</p>
 
             <h3 class="el">What You Will Learn</h3>
-            <p class="el" id="bachelors-degree-wywl">$wywl</p>
+            <p class="el" id="bachelors_degree_wywl">$wywl</p>
 
             <h3 class="el">Specialized Subjects We Offer</h3>
-            <div class="el" id="bachelors-degree-specializedSubjects">
+            <div class="el" id="bachelors_degree_specializedSubjects">
                 $specializedSubjectsHTML
             </div>
             
             <h3 class="el">What Scholarships You Can Access</h3>
-            <div class="el" id="bachelors-degree-scholarships">
+            <div class="el" id="bachelors_degree_scholarships">
                 $scholarshipsHTML
             </div>
         </div>
@@ -129,7 +129,7 @@ foreach ($corporateTrainings as $ct) {
 
     $corporateTrainingHTML = $corporateTrainingHTML.<<<HTML
         <div class="corporate-training">
-            <div class="el" id="corporate-training-more-info">
+            <div class="el" id="corporate_training_more_info">
                 <div>
                     <h4>PROGRAM DURATION</h4>
                     <p>$ctProgramDuration</p>
@@ -140,17 +140,17 @@ foreach ($corporateTrainings as $ct) {
                 </div>
             </div>
 
-            <p class="el" id="corporate-degree-description">$ctDescription</p>
+            <p class="el" id="corporate_degree_description">$ctDescription</p>
             
             <div>
                 <h3>Programs Offered</h3>
-                <div class="el" id="corporate-training-programs">
+                <div class="el" id="corporate_training_programs">
                     <ul>$programsOfferedHTML</ul>
                 </div>
             </div>
 
             <div class="el container-btn-ct-register">
-                <button id="btn-open-register">REGISTER</button>
+                <button id="btn_open_register">REGISTER</button>
             </div>
         </div>
     HTML;

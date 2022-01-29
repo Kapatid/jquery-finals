@@ -27,6 +27,6 @@ abstract class Route {
 
     public static function requireLayout(string $name) 
     {
-        require_once('./src/Layouts/'.$name.'.php');
+        require_once('./src/Views/Layouts/'.$name.'.php');
     }
 }

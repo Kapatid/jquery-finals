@@ -1,36 +1,37 @@
 import anime from './anime.es.js'
 
-// Home interactions
-$('#home-bg-vid').on('ended', () => {
-  $('#home-btn').animate({ opacity: 1 }, 150)
+//#region Home interactions
+$('#home_bg_vid').on('ended', () => {
+  $('#home_btn').animate({ opacity: 1 }, 150)
 })
-$('#ciit-logo').on('click mouseover', () => {
-  $('#home-btn').animate({ opacity: 1 }, 150)
+$('#ciit_logo').on('click mouseover', () => {
+  $('#home_btn').animate({ opacity: 1 }, 150)
 })
-$('#home-btn').on('click', () => {
-  $('#home-container').css({ display: 'grid' })
-  $('#home-container').animate({ top: 0 })
+$('#home_btn').on('click', () => {
+  $('#home_container').css({ display: 'grid' })
+  $('#home_container').animate({ top: 0 })
 })
+//#endregion
 
 
-// Buttons for floating home
+//#region Buttons for floating home
 $('.btn-close').on('click', () => {
-  $('#home-container').animate(
+  $('#home_container').animate(
     { top: '100%' }, 500, 
-    () => {$('#home-container').css({ display: 'none' })}
+    () => {$('#home_container').css({ display: 'none' })}
   )
 })
-$('#btn-school').on('click', () => {
-  if (!$('#btn-school').hasClass('active')) {
-    $('#container-school').show()
-    $('#container-college').hide()
-    $('#container-corporate-training').hide()
-    $('#btn-school').addClass('active')
-    $('#btn-college').removeClass('active')
-    $('#btn-corporate-training').removeClass('active')
+$('#btn_school').on('click', () => {
+  if (!$('#btn_school').hasClass('active')) {
+    $('#container_school').show()
+    $('#container_college').hide()
+    $('#container_corporate_training').hide()
+    $('#btn_school').addClass('active')
+    $('#btn_college').removeClass('active')
+    $('#btn_corporate_training').removeClass('active')
 
     anime({
-      targets: `#container-school`,
+      targets: `#container_school`,
       opacity: [0, 1],
       translateX: [100, 0],
       easing: 'cubicBezier(0.075, 0.820, 0.165, 1.000)',
@@ -38,17 +39,17 @@ $('#btn-school').on('click', () => {
     })
   }
 })
-$('#btn-college').on('click', () => {
-  if (!$('#btn-college').hasClass('active')) {
-    $('#container-school').hide()
-    $('#container-college').show()
-    $('#container-corporate-training').hide()
-    $('#btn-school').removeClass('active')
-    $('#btn-college').addClass('active')
-    $('#btn-corporate-training').removeClass('active')
+$('#btn_college').on('click', () => {
+  if (!$('#btn_college').hasClass('active')) {
+    $('#container_school').hide()
+    $('#container_college').show()
+    $('#container_corporate_training').hide()
+    $('#btn_school').removeClass('active')
+    $('#btn_college').addClass('active')
+    $('#btn_corporate_training').removeClass('active')
 
     anime({
-      targets: `#container-college`,
+      targets: `#container_college`,
       opacity: [0, 1],
       translateX: [100, 0],
       easing: 'cubicBezier(0.075, 0.820, 0.165, 1.000)',
@@ -56,17 +57,17 @@ $('#btn-college').on('click', () => {
     })
   }
 })
-$('#btn-corporate-training').on('click', () => {
-  if (!$('#btn-corporate-training').hasClass('active')) {
-    $('#container-school').hide()
-    $('#container-college').hide()
-    $('#container-corporate-training').show()
-    $('#btn-school').removeClass('active')
-    $('#btn-college').removeClass('active')
-    $('#btn-corporate-training').addClass('active')
+$('#btn_corporate_training').on('click', () => {
+  if (!$('#btn_corporate_training').hasClass('active')) {
+    $('#container_school').hide()
+    $('#container_college').hide()
+    $('#container_corporate_training').show()
+    $('#btn_school').removeClass('active')
+    $('#btn_college').removeClass('active')
+    $('#btn_corporate_training').addClass('active')
 
     anime({
-      targets: `#container-corporate-training`,
+      targets: `#container_corporate_training`,
       opacity: [0, 1],
       translateX: [100, 0],
       easing: 'cubicBezier(0.075, 0.820, 0.165, 1.000)',
@@ -74,9 +75,10 @@ $('#btn-corporate-training').on('click', () => {
     })
   }
 })
+//#endregion
 
 
-// Bachelor's Degree Elements
+//#region Bachelor's Degree Elements
 $('.btn-bd').on('click', function(btn) {
   const id = $(this).attr('id')
   
@@ -101,59 +103,61 @@ $('.btn-degree-exit').on('click', function() {
   const btn = $(this)
   btn.parent().css({ display: 'none' })
 })
+//#endregion
 
 
-// Corporate Training form
-$('#btn-open-register').on('click', function() {
-  $('#container-form-ct').css({ display: 'grid' })
+//#region Corporate Training form 
+$('#btn_open_register').on('click', function() {
+  $('#container_form_ct').css({ display: 'grid' })
   anime({
-    targets: `#form-ct-register`,
+    targets: `#form_ct_register`,
     opacity: [0, 1],
     translateY: [100, 0],
     easing: 'cubicBezier(0.075, 0.820, 0.165, 1.000)',
     duration: 200
   })
 })
-$('#form-btn-close').on('click', function() {
+$('#form_btn_close').on('click', function() {
   anime({
-    targets: '#form-ct-register',
+    targets: '#form_ct_register',
     opacity: [1, 0],
     translateY: [0, 100],
     easing: 'cubicBezier(0.075, 0.820, 0.165, 1.000)',
     duration: 200,
     complete: function(anim) {
-      $('#container-form-ct').css({ display: 'none' })
+      $('#container_form_ct').css({ display: 'none' })
     }
   })
 })
-$('#ct-age-input').on('input', function() {
+$('#ct_age_input').on('input', function() {
   this.value = this.value.slice(0,this.maxLength)
 
   !isNaN($(this).val()) && $(this).val($(this).val())
 })
-$('#btn-submit').on('click', function() {
+$('#btn_submit').on('click', function() {
   if ($('input[name="email"]').val() && $('input[name="email"]').val() && 
       $('input[name="email"]').val() && $('input[name="email"]').val() && 
       $('select[name="program"]').val()) {
     $(this).css({ display: 'none' })
-    $('#btn-submit-loading').css({ display: 'grid' })
+    $('#btn_submit_loading').css({ display: 'grid' })
   }
 })
-$('#btn-submit-loading').on('click', function() {
+$('#btn_submit_loading').on('click', function() {
   this.preventDefault();
 })
+//#endregion
 
 
 // Floating status
-$('#status-btn-close').on('click', function() {
+$('#status_btn_close').on('click', function() {
   anime({
-    targets: '#home-status',
+    targets: '#home_status',
     opacity: [1, 0],
     translateY: [0, 100],
     easing: 'linear',
     duration: 100,
     complete: function(anim) {
-      $('#home-status').css({ display: 'none' })
+      $('#home_status').css({ display: 'none' })
     }
   })
 })
