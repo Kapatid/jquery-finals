@@ -210,12 +210,12 @@
   overflow: auto;
   scrollbar-width: thin;
 }
-.corporate-training #corporate-training-more-info {
+.corporate-training #corporate_training_more_info {
   width: 100%;
   display: flex;
   column-gap: 20px;
 }
-.corporate-training #corporate-training-programs li {
+.corporate-training #corporate_training_programs li {
   margin-left: 14px;
 }
 .container-btn-ct-register {
